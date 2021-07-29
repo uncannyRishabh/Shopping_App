@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/backdrop"
+    android:paddingHorizontal="22dp"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42dp"
+        android:src="@drawable/ic_icon__"
+        android:transitionName="sharedTrans_1"
+        />
+
+    <TextView
+        android:id="@+id/signup_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/icon"
+        android:layout_marginVertical="32dp"
+        android:text="Create New Account"
+        android:textColor="@color/white"
+        android:textSize="34sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/signup_name_tf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/signup_heading"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxBackgroundColor="@color/white"
+        android:layout_marginBottom="14dp"
+        app:hintTextColor="@color/white"
+        app:boxStrokeColor="@color/purple_500"
+        android:textColorHint="@color/lestBlack"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:textColor="@color/black"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/signup_mail_tf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/signup_name_tf"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxBackgroundColor="@color/white"
+        android:layout_marginBottom="14dp"
+        app:hintTextColor="@color/white"
+        app:boxStrokeColor="@color/purple_500"
+        android:textColorHint="@color/lestBlack"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:textColor="@color/black"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/signup_pass_tf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/signup_mail_tf"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxBackgroundColor="@color/white"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/lestBlack"
+        app:hintTextColor="@color/white"
+        app:boxStrokeColor="@color/purple_500"
+        android:textColorHint="@color/lestBlack"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:textColor="@color/black"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/w_btn_3"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/signup_pass_tf"
+        android:backgroundTint="@color/purple_500"
+        android:drawableEnd="@drawable/ic_arrow"
+        android:text="     Sign Up"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:transitionName="sharedTrans_2"
+        android:layout_marginTop="18dp"
+        app:cornerRadius="16dp" />
+
+</RelativeLayout>

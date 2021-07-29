@@ -16,7 +16,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:transitionName="sharedTrans_1"
+        />
 
     <LinearLayout
         android:id="@+id/btn_vh"
@@ -40,9 +42,8 @@
             android:textSize="16sp"
             android:textColor="@color/white"
             app:cornerRadius="16dp"
-            app:layout_constraintBottom_toTopOf="@id/w_btn_2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:transitionName="sharedTrans_2"
+            />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/w_btn_2"
@@ -55,9 +56,8 @@
             android:textSize="16sp"
             android:textColor="@color/white"
             app:cornerRadius="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/w_btn_1" />
+            android:transitionName="sharedTrans_2"
+            />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/w_btn_3"
@@ -70,9 +70,6 @@
             android:textSize="15sp"
             android:textColor="@color/white"
             app:cornerRadius="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/w_btn_2" />
+            />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

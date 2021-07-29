@@ -12,12 +12,15 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="android:navigationBarColor">@color/backdrop</item>
+        <item name="android:windowContentTransitions">true</item>
     </style>
 
     <style name="Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:statusBarColor">@color/backdrop</item>
         <item name="android:windowBackground">@drawable/splash</item>
         <item name="android:navigationBarColor">@color/backdrop</item>
+        <item name="android:windowContentTransitions">true</item>
     </style>
 
 </resources>
