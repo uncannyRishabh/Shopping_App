@@ -14,7 +14,12 @@
         <!-- Customize your theme here. -->
         <item name="android:navigationBarColor">@color/backdrop</item>
         <item name="android:windowContentTransitions">true</item>
+    </style>
 
+    <style name="circularImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+        <item name="colorOnBackground">@color/backdrop</item>
     </style>
 
     <style name="Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">

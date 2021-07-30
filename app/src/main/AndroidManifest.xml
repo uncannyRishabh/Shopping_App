@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Splash">
         <activity
+            android:name=".Dashboard"
+            android:exported="true"
+            android:label="@string/title_activity_dashboard"
+            android:theme="@style/Splash.NoActionBar" />
+        <activity
+            android:name=".DashboardActivity"
+            android:exported="true" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="true" />
         <activity
@@ -22,6 +30,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

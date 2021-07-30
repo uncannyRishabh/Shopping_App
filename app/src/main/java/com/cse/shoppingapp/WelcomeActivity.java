@@ -1,7 +1,5 @@
 package com.cse.shoppingapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.app.ActivityOptions;
 import android.content.Intent;
@@ -14,11 +12,27 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 @SuppressWarnings({"FieldMayBeFinal","FieldCanBeLocal"})
 public class WelcomeActivity extends AppCompatActivity implements View.OnClickListener{
     private LinearLayout btn_viewHolder;
     private ImageView icon;
     private Button login,signup,continue_as_guest;
+
+    private FirebaseAuth mAuth;
+
+    private Runnable mAnimation = new Runnable() {
+        @Override
+        public void run() {
+            icon.animate().scaleX(.67f).scaleY(.67f).translationY(-200f)
+                    .setDuration(600).setInterpolator(new AccelerateDecelerateInterpolator())
+                    .withEndAction(onAnimationEnd);
+        }
+    };
 
     private Runnable onAnimationEnd = new Runnable() {
         @Override
@@ -27,7 +41,17 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
         }
     };
 
-    public WelcomeActivity() {
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+
+        if(currentUser!=null){
+            Intent i1 = new Intent(WelcomeActivity.this, DashboardActivity.class);
+            startActivity(i1);
+        }
     }
 
     @Override
@@ -48,14 +72,9 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
         continue_as_guest = findViewById(R.id.w_btn_3);
         continue_as_guest.setOnClickListener(this);
 
-        animateLayoutChanges();
+        icon.animate().scaleX(.5f).scaleY(.5f).setDuration(400)
+                .setInterpolator(new AccelerateDecelerateInterpolator()).withEndAction(mAnimation);
 
-    }
-
-    private void animateLayoutChanges() {
-        icon.animate().scaleX(.67f).scaleY(.67f).translationY(-200f)
-                .setDuration(600).setInterpolator(new AccelerateDecelerateInterpolator())
-                .withEndAction(onAnimationEnd);
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -80,5 +99,11 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
                 Toast.makeText(this, "3", Toast.LENGTH_SHORT).show();
                 break;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finishAffinity();
     }
 }

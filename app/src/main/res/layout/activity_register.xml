@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/icon"
         android:layout_marginVertical="32dp"
+        android:fontFamily="@font/roboto"
         android:text="Create New Account"
         android:textColor="@color/white"
         android:textSize="34sp" />
@@ -44,6 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Name"
+            android:inputType="textPersonName"
             android:textColor="@color/black"
             />
     </com.google.android.material.textfield.TextInputLayout>
@@ -64,6 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"
+            android:inputType="textEmailAddress"
             android:textColor="@color/black"
             />
     </com.google.android.material.textfield.TextInputLayout>
@@ -85,22 +88,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
+            android:inputType="textPassword"
             android:textColor="@color/black"
             />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/w_btn_3"
+        android:id="@+id/signup_btn"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_below="@id/signup_pass_tf"
+        android:layout_marginTop="18dp"
         android:backgroundTint="@color/purple_500"
         android:drawableEnd="@drawable/ic_arrow"
         android:text="     Sign Up"
         android:textColor="@color/white"
         android:textSize="15sp"
         android:transitionName="sharedTrans_2"
-        android:layout_marginTop="18dp"
         app:cornerRadius="16dp" />
 
 </RelativeLayout>

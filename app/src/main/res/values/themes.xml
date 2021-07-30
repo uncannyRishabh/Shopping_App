@@ -16,11 +16,28 @@
         <item name="android:windowContentTransitions">true</item>
     </style>
 
+    <style name="circularImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+        <item name="colorPrimary">@color/backdrop</item>
+        <item name="colorPrimaryVariant">@color/backdrop</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
     <style name="Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:statusBarColor">@color/backdrop</item>
         <item name="android:windowBackground">@drawable/splash</item>
         <item name="android:navigationBarColor">@color/backdrop</item>
         <item name="android:windowContentTransitions">true</item>
     </style>
+
+    <style name="Splash.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Splash.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Splash.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>
