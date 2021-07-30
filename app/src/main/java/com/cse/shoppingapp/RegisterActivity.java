@@ -8,18 +8,23 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Objects;
+
 public class RegisterActivity extends AppCompatActivity {
     private TextInputLayout name,email,password;
     private Button signup;
+    private RelativeLayout parent;
 
     private FirebaseAuth mAuth;
 
@@ -35,14 +40,37 @@ public class RegisterActivity extends AppCompatActivity {
         email = findViewById(R.id.signup_mail_tf);
         password = findViewById(R.id.signup_pass_tf);
         signup = findViewById(R.id.signup_btn);
+        parent = findViewById(R.id.signup_parent);
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                signup_user();
+                if(validate_fields()){
+                    signup_user();
+                }
+                else{
+                    Snackbar.make(parent,"Name, Email or Password cannot be empty",Snackbar.LENGTH_LONG).show();
+                }
             }
         });
 
+    }
+
+    private boolean validate_fields() {
+        if(!Objects.equals(email.getEditText().getText(),null) &&
+                !Objects.equals(password.getEditText().getText(),null) &&
+                !Objects.equals(name.getEditText().getText(),null)){
+            if(password.getEditText().getText().toString().length()>8){
+                return true;
+            }
+            else{
+                Snackbar.make(parent,"Password too short",Snackbar.LENGTH_LONG).show();
+                return false;
+            }
+        }
+        else {
+            return false;
+        }
     }
 
     private void signup_user() {
@@ -58,7 +86,6 @@ public class RegisterActivity extends AppCompatActivity {
                             Log.d("DEBUG : ", "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
 //                            uid = user.getUid();
-
                             updateUI(user);
                         } else {
                             Log.w("DEBUG : ", "createUserWithEmail:failure", task.getException());

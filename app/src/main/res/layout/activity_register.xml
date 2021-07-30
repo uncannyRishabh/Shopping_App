@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/signup_parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/backdrop"
     android:paddingHorizontal="22dp"
     tools:context=".LoginActivity">
@@ -105,6 +106,6 @@
         android:textColor="@color/white"
         android:textSize="15sp"
         android:transitionName="sharedTrans_2"
-        app:cornerRadius="16dp" />
+        app:cornerRadius="26dp" />
 
 </RelativeLayout>

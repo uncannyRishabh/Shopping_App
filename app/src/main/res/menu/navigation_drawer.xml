@@ -7,16 +7,19 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/item1"
-            android:title="Home"
-            android:checked="true" />
+            android:icon="@drawable/ic_m_home"
+            android:title="Home" />
         <item
             android:id="@+id/item2"
+            android:icon="@drawable/ic_m_cart"
             android:title="Orders" />
         <item
             android:id="@+id/item3"
+            android:icon="@drawable/ic_m_wishlist"
             android:title="Wishlist" />
         <item
             android:id="@+id/item4"
+            android:icon="@drawable/ic_m_logout"
             android:title="Logout" />
     </group>
 </menu>

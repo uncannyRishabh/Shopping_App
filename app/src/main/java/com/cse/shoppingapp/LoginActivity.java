@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,9 +18,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Objects;
+
 public class LoginActivity extends AppCompatActivity {
     private TextInputLayout email,password;
     private Button login_btn;
+    private RelativeLayout parent;
 
     private FirebaseAuth mAuth;
 
@@ -35,21 +37,30 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.login_mail_tf);
         password = findViewById(R.id.login_pass_tf);
         login_btn = findViewById(R.id.login_btn);
+        parent = findViewById(R.id.login_parent);
 
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                login_user();
+                if(validateFields()) {
+                    login_user();
+                }
+                else{
+                    Snackbar.make(parent,"Email or Password cannot be empty",Snackbar.LENGTH_LONG).show();
+                }
             }
         });
 
     }
 
+    private boolean validateFields() {
+        return !Objects.equals(email.getEditText().getText(), null) &&
+                !Objects.equals(password.getEditText().getText(), null);
+    }
+
     private void login_user() {
         String mail = email.getEditText().getText().toString().trim();
         String pass = password.getEditText().getText().toString().trim();
-        Toast.makeText(this, "email : "+mail + " pass : "+pass, Toast.LENGTH_SHORT).show();
-        RelativeLayout parent = findViewById(R.id.login_parent);
         mAuth.signInWithEmailAndPassword(mail, pass)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override

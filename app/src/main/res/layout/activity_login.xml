@@ -96,6 +96,6 @@
         android:textColor="@color/white"
         android:textSize="15sp"
         android:transitionName="sharedTrans_2"
-        app:cornerRadius="16dp" />
+        app:cornerRadius="26dp" />
 
 </RelativeLayout>
