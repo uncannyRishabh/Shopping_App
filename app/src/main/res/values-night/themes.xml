@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.ShoppingApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.ShoppingApp" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_200</item>
         <item name="colorPrimaryVariant">@color/backdrop</item>
@@ -14,6 +14,7 @@
         <!-- Customize your theme here. -->
         <item name="android:navigationBarColor">@color/backdrop</item>
         <item name="android:windowContentTransitions">true</item>
+        <item name="itemIconTint">@color/purple_500</item>
     </style>
 
     <style name="circularImageView">
@@ -22,7 +23,7 @@
         <item name="colorOnBackground">@color/backdrop</item>
     </style>
 
-    <style name="Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Splash" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:statusBarColor">@color/backdrop</item>
         <item name="android:windowBackground">@drawable/splash</item>
         <item name="android:navigationBarColor">@color/backdrop</item>

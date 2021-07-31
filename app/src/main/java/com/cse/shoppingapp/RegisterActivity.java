@@ -48,9 +48,6 @@ public class RegisterActivity extends AppCompatActivity {
                 if(validate_fields()){
                     signup_user();
                 }
-                else{
-                    Snackbar.make(parent,"Name, Email or Password cannot be empty",Snackbar.LENGTH_LONG).show();
-                }
             }
         });
 
@@ -69,6 +66,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         }
         else {
+            Snackbar.make(parent,"Name, Email or Password cannot be empty",Snackbar.LENGTH_LONG).show();
             return false;
         }
     }

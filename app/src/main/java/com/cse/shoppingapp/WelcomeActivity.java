@@ -10,7 +10,6 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -96,7 +95,8 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
                 startActivity(i2,options_.toBundle());
                 break;
             case R.id.w_btn_3:
-                Toast.makeText(this, "3", Toast.LENGTH_SHORT).show();
+                Intent i3 = new Intent(this,DashboardActivity.class);
+                startActivity(i3);
                 break;
         }
     }

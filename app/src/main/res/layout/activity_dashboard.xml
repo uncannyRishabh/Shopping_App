@@ -23,18 +23,20 @@
             android:layout_height="64dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            app:collapseIcon="@drawable/ic_m_home"
             android:background="@color/backdrop">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                >
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/dash_navigation_icon"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:layout_gravity="center_vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"
                     android:background="@color/white"
                     android:padding="6dp"
                     android:scaleType="centerCrop"
@@ -46,14 +48,41 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/dash_navigation_icon"
                     android:layout_marginStart="12dp"
                     android:text="Shopping App"
                     android:textColor="@color/white"
                     android:textSize="22sp" />
 
-            </LinearLayout>
+                <ImageView
+                    android:id="@+id/dash_search_icon"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@id/dash_end_icon2"
+                    android:padding="12dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_search" />
+
+                <ImageView
+                    android:id="@+id/dash_end_icon2"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="13dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_m_cart" />
+
+            </RelativeLayout>
         </androidx.appcompat.widget.Toolbar>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/frag_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/dash_toolbar" />
     </RelativeLayout>
 
     <com.google.android.material.navigation.NavigationView
