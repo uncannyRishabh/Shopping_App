@@ -12,23 +12,22 @@
         android:layout_height="98dp"
         android:layout_marginHorizontal="22dp"
         android:layout_marginVertical="16dp"
-        android:padding="2dp"
         android:background="@color/white"
+        android:padding="2dp"
+        android:src="@drawable/ic_appbar_icon"
         app:shapeAppearance="@style/circularImageView"
         app:strokeColor="@color/lestBlack"
-        app:strokeWidth="2dp"
-        android:src="@drawable/ic_appbar_icon"
-        />
+        app:strokeWidth="2dp" />
+
     <TextView
         android:id="@+id/header_heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/header_icon"
+        android:layout_marginHorizontal="22dp"
         android:text="User Name"
         android:textColor="@color/white"
-        android:textSize="24dp"
-        android:layout_marginHorizontal="22dp"
-        android:layout_below="@id/header_icon"
-        />
+        android:textSize="24dp" />
     <TextView
         android:id="@+id/header_subtitle"
         android:layout_width="wrap_content"

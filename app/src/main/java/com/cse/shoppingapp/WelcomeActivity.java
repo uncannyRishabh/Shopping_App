@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Pair;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -48,8 +49,13 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
         if(currentUser!=null){
-            Intent i1 = new Intent(WelcomeActivity.this, DashboardActivity.class);
-            startActivity(i1);
+            new Handler(getMainLooper()).postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent i1 = new Intent(WelcomeActivity.this, DashboardActivity.class);
+                    startActivity(i1);
+                }
+            },800);
         }
     }
 

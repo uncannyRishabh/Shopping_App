@@ -54,8 +54,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private boolean validateFields() {
-        return !Objects.equals(email.getEditText().getText(), null) &&
-                !Objects.equals(password.getEditText().getText(), null);
+        return !Objects.equals(email.getEditText().getText().toString(), "") &&
+                !Objects.equals(password.getEditText().getText().toString(), "");
     }
 
     private void login_user() {

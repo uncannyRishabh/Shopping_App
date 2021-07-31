@@ -54,9 +54,9 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private boolean validate_fields() {
-        if(!Objects.equals(email.getEditText().getText(),null) &&
-                !Objects.equals(password.getEditText().getText(),null) &&
-                !Objects.equals(name.getEditText().getText(),null)){
+        if(!Objects.equals(email.getEditText().getText().toString(),"") &&
+                !Objects.equals(password.getEditText().getText().toString(),"") &&
+                !Objects.equals(name.getEditText().getText().toString(),"")){
             if(password.getEditText().getText().toString().length()>8){
                 return true;
             }

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/home_frag">
+
+    <fragment
+        android:id="@+id/home_frag"
+        android:name="com.cse.shoppingapp.home_frag"
+        android:label="fragment_home_frag"
+        tools:layout="@layout/fragment_home_frag" >
+        <action
+            android:id="@+id/action_home_frag_to_orders_frag"
+            app:destination="@id/orders_frag"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_home_frag_to_cart_frag"
+            app:destination="@id/cart_frag"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_home_frag_to_wishlist_frag"
+            app:destination="@id/wishlist_frag"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/orders_frag"
+        android:name="com.cse.shoppingapp.orders_frag"
+        android:label="fragment_orders_frag"
+        tools:layout="@layout/fragment_orders_frag" />
+    <fragment
+        android:id="@+id/wishlist_frag"
+        android:name="com.cse.shoppingapp.wishlist_frag"
+        android:label="fragment_wishlist_frag"
+        tools:layout="@layout/fragment_wishlist_frag" />
+    <fragment
+        android:id="@+id/cart_frag"
+        android:name="com.cse.shoppingapp.cart_frag"
+        android:label="fragment_cart_frag"
+        tools:layout="@layout/fragment_cart_frag" />
+</navigation>
