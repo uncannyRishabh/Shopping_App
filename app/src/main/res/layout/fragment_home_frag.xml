@@ -1,13 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".home_frag">
-
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Home fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/imageSlider"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:iss_auto_cycle="true"
+            app:iss_delay="0"
+            app:iss_period="1800"
+            app:iss_placeholder="@drawable/ad_slide_1" />
 
-</FrameLayout>
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="5dp"
+            android:alignmentMode="alignMargins"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:columnOrderPreserved="false"
+            android:paddingVertical="12dp"
+            >
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/dash_item1"
+                android:minHeight="210dp"
+                android:minWidth="150dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp" >
+                <ImageView
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="end"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_m_wishlist"
+                    app:tint="@color/backdrop" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="item_name_description+price"
+                    android:layout_gravity="bottom"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/dash_item2"
+                android:minHeight="180dp"
+                android:minWidth="150dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp" >
+                <ImageView
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="end"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_m_wishlist"
+                    app:tint="@color/backdrop" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="item_name_description+price"
+                    android:layout_gravity="bottom"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/dash_item3"
+                android:minHeight="180dp"
+                android:minWidth="150dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp" >
+                <ImageView
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="end"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_m_wishlist"
+                    app:tint="@color/backdrop" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="item_name_description+price"
+                    android:layout_gravity="bottom"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/dash_item4"
+                android:minHeight="180dp"
+                android:minWidth="150dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp" >
+                <ImageView
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="end"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_m_wishlist"
+                    app:tint="@color/backdrop" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="item_name_description+price"
+                    android:layout_gravity="bottom"
+                    />
+            </androidx.cardview.widget.CardView>
+        </GridLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

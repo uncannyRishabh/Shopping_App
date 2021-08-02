@@ -2,26 +2,46 @@ package com.cse.shoppingapp;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
+import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.ArrayList;
+
 public class home_frag extends Fragment {
+    private FirebaseAuth mAuth;
+
+    private ImageSlider imageSlider;
 
     public home_frag() {
         // Required empty public constructor
     }
 
-    public static home_frag newInstance(String param1, String param2) {
-        home_frag fragment = new home_frag();
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mAuth = FirebaseAuth.getInstance();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        ArrayList<SlideModel> list = new ArrayList<>();
+        list.add(new SlideModel(R.drawable.ad_slide_0, ScaleTypes.FIT));
+        list.add(new SlideModel(R.drawable.ad_slide_1, ScaleTypes.FIT));
+        list.add(new SlideModel(R.drawable.ad_slide_2, ScaleTypes.FIT));
+        list.add(new SlideModel(R.drawable.ad_slide_3, ScaleTypes.FIT));
+        imageSlider = view.findViewById(R.id.imageSlider);
+        imageSlider.setImageList(list);
 
     }
 
