@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="18dp"
+    android:layout_marginVertical="4dp"
+    android:elevation="2dp"
+    android:padding="6dp"
+    android:paddingEnd="12dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ImageView
+            android:id="@+id/list_item_image"
+            android:layout_width="110dp"
+            android:layout_height="120dp"
+            android:src="@drawable/ic_appbar_icon"
+
+            />
+
+        <TextView
+            android:id="@+id/list_item_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/list_item_image"
+            android:text="item name and description"
+            android:textSize="18sp"
+            android:textColor="@color/lestBlack"
+            android:layout_marginStart="6dp"
+            />
+
+        <TextView
+            android:id="@+id/list_item_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/list_item_description"
+            android:layout_marginVertical="12dp"
+            android:layout_marginStart="6dp"
+            android:layout_toStartOf="@id/list_item_cancel"
+            android:layout_toEndOf="@+id/list_item_image"
+            android:text="price"
+            android:textColor="@color/purple_500"
+            android:textSize="14sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/list_item_cancel"
+            android:layout_width="52dp"
+            android:layout_height="58dp"
+            app:cornerRadius="46dp"
+            android:layout_marginEnd="58dp"
+            android:backgroundTint="#F4F2F2"
+            android:text="x"
+            android:textColor="#f0f"
+            android:layout_alignEnd="@id/list_item_description"
+            android:layout_alignParentBottom="true"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/list_item_multiply"
+            android:layout_width="52dp"
+            android:layout_height="58dp"
+            app:cornerRadius="46dp"
+            android:text="x1"
+            android:layout_alignEnd="@id/list_item_description"
+            android:layout_alignParentBottom="true"
+            />
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

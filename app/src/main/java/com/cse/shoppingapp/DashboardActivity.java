@@ -38,6 +38,7 @@ public class DashboardActivity extends AppCompatActivity {
     private Runnable hide_toolbar_item_for_cartview = new Runnable() {
         @Override
         public void run() {
+
             toolbar.findViewById(R.id.dash_search_icon).setVisibility(View.INVISIBLE);
             toolbar.findViewById(R.id.dash_end_icon2).setVisibility(View.INVISIBLE);
         }
@@ -158,7 +159,7 @@ public class DashboardActivity extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.frag_container,cart_frag.class,null,null)
                         .addToBackStack(null)
-
+                        .runOnCommit(hide_toolbar_item_for_cartview)
                         .commit();
                 Log.e(TAG, "onBackPressed: "+getSupportFragmentManager().getBackStackEntryCount());
             }
