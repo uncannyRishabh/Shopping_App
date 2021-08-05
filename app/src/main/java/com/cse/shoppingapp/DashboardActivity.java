@@ -159,7 +159,7 @@ public class DashboardActivity extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.frag_container,cart_frag.class,null,null)
                         .addToBackStack(null)
-                        .runOnCommit(hide_toolbar_item_for_cartview)
+                        //.runOnCommit(hide_toolbar_item_for_cartview) //instead, add toolbar for every other fragment(wherever necessary)
                         .commit();
                 Log.e(TAG, "onBackPressed: "+getSupportFragmentManager().getBackStackEntryCount());
             }
